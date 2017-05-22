@@ -12,6 +12,29 @@
 <label><input name="Fruit" type="checkbox" value="" />香蕉 </label>
 <label><input name="Fruit" type="checkbox" value="" />梨 </label>
     <input type="submit" value="提交">
+     <dl class="form">
+              <dd>
+                  <label class="form-label text-gray f5" for="user[login]">用户名：</label>
+                  <input type="text" name="user[login]" id="user[login]" class="form-control form-control-lg input-block" placeholder="Pick a username" data-autocheck-url="/signup_check/username" data-autocheck-authenticity-token="1gtG0e6QhWWGI+BIOa9Yblw3AIq6TRlz4f1WaA2ThsjGjyGJgve1c0naHN+AKwvxjQyOPbhOk0CRKF+tak8Dhw==" autofocus>
+              </dd>
+     </dl>
+    <dl class="form">
+              <dd>
+                <label class="form-label text-gray f5" for="user[email]">Email：</label>
+                <input type="text" name="user[email]" id="user[email]" class="form-control form-control-lg input-block js-email-notice-trigger" placeholder="Your email address" data-autocheck-url="/signup_check/email" data-autocheck-authenticity-token="3eWnJzvqRiGx1oT5ubMFObnV2FTwuX+HEV07p3STgPsAiSrNcLWpg6SY1TjmmwyyDqSNBdFZsnRM7qKJSqPHkA==">
+              </dd>
+    </dl>
+    <dl class="form">
+              <dd>
+                <label class="form-label text-gray f5" for="user[password]">密码：</label>
+                <input type="password" name="user[password]" id="user[password]" class="form-control form-control-lg input-block" placeholder="Create a password" data-autocheck-url="/signup_check/password" data-autocheck-authenticity-token="U6JWEFa+7WyvC8L0/HEg+u9StHkiReQ9Z+tRdO6Vgi9CAhviijJBtS2tG8JSFUdGfirMxtF+ggJ9BkDK6Sx4Mw==">
+              </dd>
+    </dl>
+            <input type="hidden" name="source" class="js-signup-source" value="form-home">
+            <input class="form-control" name="timestamp" type="hidden" value="1495092380598" />
+            <input class="form-control" name="timestamp_secret" type="hidden" value="9eaad977089eea2e4aacee9544b3076cf5686f9bde0cf5aa577c4cd29da128b0" />
+
+            <button class="btn btn-primary btn-large f4 btn-block" type="submit">登     陆</button>
 </form>
 </body>
 </html>
