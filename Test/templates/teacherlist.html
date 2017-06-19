@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+    
+    <!-- Your Basic Site Informations -->
+    <title>小老师预约系统</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="学习与咨询" />
+    <meta name="author" content="Affapress" />
+    
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" type="text/css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/bootstrap.css">
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/flexslider.css">
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/style.css">
+
+    
+    <!-- Custom Colors -->
+    <!--<link rel="stylesheet" href="css/colors/blue.css">-->
+    <!--<link rel="stylesheet" href="css/colors/green.css">-->
+    <!--<link rel="stylesheet" href="css/colors/pink.css">-->
+    <!--<link rel="stylesheet" href="css/colors/purple.css">-->
+    <!--<link rel="stylesheet" href="css/colors/yellow.css">-->
+    
+    <!--[if lt IE 9]>
+    	<script src="js/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+	<![endif]-->
+    
+    <!--[if lt IE 8]>
+    	<link rel="stylesheet" href="css/ie-older.css">
+    <![endif]-->
+    
+    <noscript><link rel="stylesheet" href="./css/css/no-js.css"></noscript>
+    
+    <!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    
+</head>
+<body>
+    
+    <!-- #header -->
+    <header id="header" data-parallax="scroll" data-speed="0.2" data-natural-width="1920" data-natural-height="1080" data-image-src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/images/content/bg/1.jpg">
+    	
+                
+        <!-- .header-overlay -->
+        <div class="header-overlay">
+            
+            <!-- #navigation -->
+            <nav id="navigation" class="navbar">
+                
+                <!-- .container -->
+                <div class="container">
+                    
+                    <div class="navbar-brand">
+                    	<a href="https://ctld.ntu.edu.tw/ls/reservation/v3/index.php/">
+                            <img src="https://ctld.ntu.edu.tw/ls/reservation/v3//images/logo_white.png" alt="Logo"/>
+                        </a> 
+                        <!-- site logo -->
+                    </div>
+                    
+                    <ul class="nav navbar-nav">
+                    <li class="active"><a href="../steacher/index.html" class="smooth-scroll">首页</a></li>
+                    <li><a href="#" class="smooth-scroll">最新消息</a></li>
+                    <li><a href="./show.html" class="smooth-scroll">小老师介绍</a></li>
+                    <li><a href="./reserve.html" class="smooth-scroll">预约管理</a></li>
+                    <li><a href="#" class="smooth-scroll">荣誉榜</a></li>
+                    <li><a href="../register.html" class="smooth-scroll">注册</a></li>
+                    <li><a href="../login.html" class="smooth-scroll">登录</a></li>
+                    </ul>
+                    
+                </div>
+                <!-- .container end -->
+                
+            </nav>
+            <!-- #navigation end -->
+            
+                        
+        </div>
+        <!-- .header-overlay -->
+        
+    </header>
+    <!-- #header end -->
+    <script>
+	
+	</script>
+    <!-- #teams -->
+
+    <div id="teams" class="wrap-container8040">
+
+        <!-- .container -->
+
+        <div class="container">
+
+            <div class="post-heading-center">
+
+                <h2>小老师介绍</h2>
+                <p>Introduce Tutors</p>
+
+            </div>
+
+            <div class="row well">
+
+                <div class="col-sm-12"> <!-- 1 -->
+
+                    <div class="affa_team_profile">
+
+                        <table class="table table-bordered">
+                        <tr>
+                            <th></th>
+                            <th width="10%">照片</th>
+                            <th width="10%">姓名</th>
+                            <th width="10%">院系</th>
+                            <th width="10%">辅导科目</th>
+                            <th width="10%">Email</th>
+                            <th width="10%">手机</th>
+                            <th width="40%">个人自荐</th>
+                            <th width="40%">预约</th>
+                        </tr>
+  {%for d in data%}
+                            <tr>
+                             <td>1</td>
+                             <td>
+                                 <img src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/71cf3bc79f3df8dc440b9091ce11728b471028ff.jpg" class="img-responsive">
+                               </td>
+                             <td>{{d.name}}</td>
+                             <td>{{d.xi}}</td>
+
+                                <td>{%for x in d.kecheng %} {{x.kecheng}}{%endfor%}<br></td>
+
+                             <td>{{d.email}}</td>
+                             <td>{{d.phone}}</td>
+                             <td><html>
+ <head>
+  <title></title>
+ </head>
+ <body>
+  <p>
+   嗨~大家好！<br />
+   <br />
+   <span>系统备注：</span><br />
+   <span>此小老师可以询问： </span><br />
+   <span>{{d.ziwo}}</span></p>
+ </body>
+</html>
+</td>
+                                <td><a href="/yue/?id={{d.studentid}}"><input type="button" value="预约"></input></a></td>
+                           </tr>
+
+
+{%endfor%}}
+                        </table>
+                    </div></div></div></div></div>
+
+
+
+    <!-- #teams end -->
+    
+    
+    
+    
+    
+<!-- #bottom -->
+    <div id="bottom">
+    	
+        <!-- .container -->
+        <div class="container">
+            
+            <div class="post-heading-center">
+                 <p>地址：天津市团泊新城博学苑天津大学仁爱学院</p>
+                <p>TEL：86-022-68579990转8163</p>
+                <p>FAX：+86-022-68579990转8163</p>
+                <p>E-mail：tomliang2016@gmail.com</p>
+            </div>
+            
+        </div>
+        <!-- .container end -->
+        
+    </div>
+    <!-- #bottom end -->
+    
+    <!-- #footer -->
+    <footer id="footer">
+    	
+        <!-- .container -->
+        <div class="container">
+            
+            <!--<div class="footer_socials">
+                <a href="#" class="link-twitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="link-pinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                <a href="#" class="link-instagram" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="link-dribbble" title="Dribbble"><i class="fa fa-dribbble"></i></a>
+                <a href="#" class="link-github" title="Github"><i class="fa fa-github"></i></a>
+                <a href="#" class="link-skype" title="Skype"><i class="fa fa-skype"></i></a>
+                <a href="#" class="link-google-plus" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                <a href="#" class="link-facebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+            </div>-->
+            
+            <p>天津大学仁爱学院 版权所有　Copyright © 2016-2017 Intelligent Library New Technology R & D Center. All Rights Reserved</p>
+            
+        </div>
+        <!-- .container end -->
+        
+    </footer>
+    <!-- #footer end -->
+    
+    <!--[if lt IE 8]>
+    	<div class="browser-notice">
+            <div class="container">
+            	<div class="text">
+                    <h1>Internet Explorer Out To Date</h1>
+                    <p>Please update your Internet Explorer browser with a newer version (Internet Explorer 8 above) now!</p>
+                    <span>You can download it <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="blank">here....</a></span>
+                </div>
+            </div>
+        </div>
+	<![endif]-->
+    
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/response.min.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/smoothscroll.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.fitvids.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.imgpreload.min.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/parallax.min.js"></script>
+	<script type="text/javascript" src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/js/script.js"></script>
+
+</body>
+</html>

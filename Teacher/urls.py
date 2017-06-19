@@ -30,7 +30,13 @@ urlpatterns = [
     url(r'show/$',views.show),
     url(r'kemu/$',views.kemu),
     url(r'acceptkecheng/$',views.acceptkecheng),
-    url(r'',views.index)
+url(r'addtime/$',views.addtime),
+url(r'addtime/$',views.accpetaddtime),
+url(r'yue/$',views.yue),
+url(r'teacherlist/$',views.teacherlist),
+    url(r'addroom',views.addroom),
+   url(r'',views.index),
+
     # url(r'createkemu/$',views.tianjiakemu),
 ]
 

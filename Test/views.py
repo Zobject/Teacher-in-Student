@@ -42,7 +42,7 @@ def acceptteacher(request):
         profile_phone=request.GET['profile_phone']
         profile_email = request.GET['profile_email']
         profile_bio=request.GET['profile_bio']
-        doc={'username':profile_names,'name':profile_name,'studentid':profile_id,'phone':profile_phone,'xi':profile_faculty,'email':profile_email,'ziwo':profile_bio,'kecheng':[]}
+        doc={'username':profile_names,'name':profile_name,'studentid':profile_id,'phone':profile_phone,'xi':profile_faculty,'email':profile_email,'ziwo':profile_bio,'kecheng':[],'time':[],'room':[]}
         print doc
         collecton.insert(doc)
         return HttpResponse('succerss')
@@ -100,6 +100,74 @@ def acceptkecheng(request):
         return HttpResponse('success')
 
 
+def accpetaddtime(request):
+    if request.method=='GET':
+        db = conn['Teacher']
+        collecton = db.Teacher
+        print 'xxxxxxx'
+        studentid=request.GET['user']
+        time=request.GET['time']
+        # print collecton.find_one({'studentid':1})
+        collecton.update({'studentid':studentid},{'$addToSet':{'time':time}})
+        print time
+        return HttpResponse('success')
+
+def addtime(request):
+         if request.method == 'GET':
+             print request.GET
+             if  request.GET.has_key('user') :
+                 db = conn['Teacher']
+                 collecton = db.Teacher
+                 print 'xxxxxxx'
+                 studentid = request.GET['user']
+                 time = request.GET['time']
+                 # print collecton.find_one({'studentid':1})
+                 collecton.update({'studentid': studentid}, {'$addToSet': {'time': time}})
+                 print time
+                 return render(request, 'addtime.html')
+             else:
+                #print request
+
+
+                return render(request,'addtime.html')
+
+
+def teacherlist(request):
+        db = conn['Teacher']
+        collecton = db.Teacher
+        if request.method == 'GET':
+            data = list(collecton.find())
+            return render(request, 'teacherlist.html', {'data': data})
+
+def yue(request):
+    if request.method=='GET':
+        db = conn['Teacher']
+        collecton = db.Teacher
+        studentid=request.GET['id']
+        data=collecton.find_one({'studentid':studentid})
+        return render(request,'yue.html',{'data':data})
+
+def addroom(request):
+        if request.method == 'GET':
+            print request.GET
+            if request.GET.has_key('user'):
+                db = conn['Teacher']
+                collecton = db.Teacher
+                print 'xxxxxxx'
+                studentid = request.GET['user']
+                time = request.GET['time']
+                # print collecton.find_one({'studentid':1})
+                collecton.update({'studentid': studentid}, {'$addToSet': {'room': time}})
+                print time
+                return render(request, 'addroom.html')
+            else:
+                # print request
+                return render(request, 'addroom.html')
+
+
 # def tianjiakemu(request):
 #     if request.method=='GET':
 #      return HttpResponse('ssss')
+# db = conn['Teacher']
+# collecton = db.Teacher
+# print collecton.find_one({'studentid':'1'})

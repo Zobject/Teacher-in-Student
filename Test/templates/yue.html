@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>text</title>
+		<style type="text/css">
+			h2{
+				padding-left: 2em;
+			}
+	
+			
+		#pozesion1
+		{	
+			float: left;
+			width: 15;
+			text-align: center;
+			line-height: 50px;
+			margin-right: 4px;	
+			background-color: ;
+		}
+		
+		</style>
+
+	</head>
+	<body>
+		
+		<h1>预约</h1>
+		<!--{{data}}-->
+		<div>
+		<h2>辅导空间</h2>
+
+		{%for d in data.room%}
+
+				<div id="pozesion1">
+				<table border="1" cellspacing="0" width="180" height="50" bgcolor="#6495ED">
+				    <tr><th>
+				    	<time datetime="2017-6-16-8.30">{{d}}</time>
+				    </th></tr>
+			    </table>
+			</div>
+
+			{%endfor%}
+		</div>
+
+		<p></p>
+		<br />
+		<br />
+		<br />
+		<br />
+			<div>
+				<h2>辅导时间</h2>
+				{%for d in data.time%}
+
+				<div id="pozesion1">
+				<table border="1" cellspacing="0" width="180" height="50" bgcolor="#6495ED">
+				    <tr><th>
+				    	<time datetime="2017-6-16-8.30">{{d}}</time>
+				    </th></tr>
+			    </table>
+			</div>
+
+			{%endfor%}
+			</div>
+				<p></p>
+		<br />
+		<br />
+		<br />
+		<br />
+				<h2>辅导科目</h2>
+				{%for d in data.kecheng%}
+
+				<div id="pozesion1">
+				<table border="1" cellspacing="0" width="180" height="50" bgcolor="#6495ED">
+				    <tr><th>
+				    	<time datetime="2017-6-16-8.30">{{d.kecheng}}</time>
+				    </th></tr>
+			    </table>
+			</div>
+
+			{%endfor%}
+			</div>
+	</body>
+</html>
