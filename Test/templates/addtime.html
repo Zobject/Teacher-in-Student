@@ -11,7 +11,7 @@
     </head>
     <body class="logged-in env-production page-account chrome-mouse">
         <div class="position-relative js-header-wrapper ">
-            <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">跳转到内容页</a>
+            <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content"></a>
             <div id="js-pjax-loader-bar" class="pjax-loader-bar">
                 <div class="progress"></div>
             </div>
@@ -36,17 +36,17 @@
                     </div>
                     <ul class="header-nav float-left" role="navigation">
                         <li class="header-nav-item">
-                            <a href="../settings/profile.html" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link">
+                            <a href="./profile.html" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link">
                                  申请小老师
                              </a>        
                         </li>
                         <li class="header-nav-item">
-                            <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item header-nav-link">
+                            <a href="" aria-label="Issues you created" class="js-selected-navigation-item header-nav-link">
                                   常见问题
                             </a>        
                         </li>
                         <li class="header-nav-item">
-                            <a href="../steacher/show.html" class="js-selected-navigation-item header-nav-link">
+                            <a href="./teacherlist.html" class="js-selected-navigation-item header-nav-link">
                                   资源列表
                             </a>            
                         </li>
@@ -57,11 +57,11 @@
                     
                     <ul class="header-nav user-nav float-right" id="user-links">
                         <li class="header-nav-item">
-                            
+
                             
                         </li>
                         <li class="header-nav-item dropdown js-menu-container">
-                            <a class="header-nav-link tooltipped tooltipped-s js-menu-target selected" href="/new" aria-label="新建…" data-ga-click="Header, create new, icon:add">
+                            <a class="header-nav-link tooltipped tooltipped-s js-menu-target selected" data-ga-click="Header, create new, icon:add">
                                 <svg aria-hidden="true" class="octicon octicon-plus float-left" height="16" version="1.1" viewBox="0 0 12 16" width="12">
                                     <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"></path>
                                 </svg>
@@ -69,14 +69,15 @@
                             </a>
                             <div class="dropdown-menu-content js-menu-content">
                                 <ul class="dropdown-menu dropdown-menu-sw">
-                                    <a class="dropdown-item" href="/new" data-ga-click="Header, create new course">
+                                    
+                                    <a class="dropdown-item" href="./addsubject.html" data-ga-click="Header, create new course">
                                       新课程
                                     </a>
-                                    <a class="dropdown-item" href="/new" data-ga-click="Header, create new time">
+                                    <a class="dropdown-item" href="./addtime.html" data-ga-click="Header, create new time">
                                       新时间
                                     </a>
-                                    <a class="dropdown-item" href="#" data-ga-click="Header, create new resources">
-                                      新资源
+                                    <a class="dropdown-item" href="./addroom.html" data-ga-click="Header, create new resources">
+                                      新空间
                                     </a>
                                     <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new discovery">
                                       新发现
@@ -86,7 +87,7 @@
                         </li>
                         <li class="header-nav-item dropdown js-menu-container">
                             <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="/登录时用户名" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar" aria-expanded="false">
-                            <img alt="@tomliang2017" class="avatar" src="https://avatars1.githubusercontent.com/u/28558403?v=3&amp;s=40" height="20" width="20">
+                            <img alt="" class="avatar" src="https://avatars1.githubusercontent.com/u/28558403?v=3&amp;s=40" height="20" width="20">
                             <span class="dropdown-caret"></span>
                             </a>
                             <div class="dropdown-menu-content js-menu-content" aria-expanded="false">
@@ -108,7 +109,7 @@
                                        帮助
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="../settings/profile.html" data-ga-click="Header, go to settings, icon:settings">
+                                    <a class="dropdown-item" href="./profile.html" data-ga-click="Header, go to settings, icon:settings">
                                        设置
                                     </a>
                                     <!-- '"` -->
@@ -159,7 +160,7 @@
                                     <label data-brackets-id="911" for="user_new_password">学号</label>
                                 </dt>
                                 <dd data-brackets-id="912">
-                                    <input data-brackets-id="913" class="form-control form-control" id="" name="user" tabindex="2" type="datetime-local">
+                                    <input data-brackets-id="913" class="form-control form-control" id="" name="user" tabindex="2" type="text">
                                 </dd>
                             </dl>
 
@@ -204,8 +205,8 @@
                 </ul>
             </div>
         </div>
-        <script crossorigin="anonymous" src="../assets/frameworks-01.js"></script>
-        <script async="async" crossorigin="anonymous" src="../assets/github-02.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-EjcFZu3GC0BKxFiWen8voNZpbamfN+333rEZbxr/Xwo=" src="https://assets-cdn.github.com/assets/frameworks-12370566edc60b404ac458967a7f2fa0d6696da99f37edf7deb1196f1aff5f0a.js"></script>
+        <script async="async" crossorigin="anonymous" integrity="sha256-hMRPCrOL1keRE33pLi8bw7DGU0k0WPbrLrin8nqGbj4=" src="https://assets-cdn.github.com/assets/github-84c44f0ab38bd64791137de92e2f1bc3b0c653493458f6eb2eb8a7f27a866e3e.js"></script>
         <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
 
             <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
