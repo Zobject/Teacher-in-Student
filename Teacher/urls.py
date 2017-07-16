@@ -19,6 +19,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from Test import views
+# add some url
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
     url(r'jion/$',views.jion),

@@ -11,7 +11,7 @@ except:
     print 'fail'
 
 
-# render homepage
+# render home page
 def index(request):
     if request.method=='GET':
         return render(request,'index.html')
@@ -107,8 +107,9 @@ def login (request):
          data=collecton.find_one({'user':name})
          passw=data.get('password')
          if passw==password:
-
-            return render(request,'login_home.html')
+             request.session['username'] = name
+             print name
+             return render(request,'login_home.html')
          else:
              return HttpResponse("Your username and password didn't match!")
 
