@@ -10,16 +10,19 @@ try:
 except:
     print 'fail'
 
-def create(request):
-    if request.method=='GET':
-        print 'x'
-    return render(request,'register.html')
 
+# render homepage
 def index(request):
     if request.method=='GET':
         return render(request,'index.html')
 
+# register user page
+def create(request):
+    if request.method=='GET':
+        #print 'x'
+     return render(request,'register.html')
 
+# register user
 def createuser(request):
     db=conn['Teacher']
     collecton=db.User
@@ -29,8 +32,41 @@ def createuser(request):
         password=request.GET['password']
         doc={'password':password,'user':user,'email':email}
         collecton.insert(doc)
-        return HttpResponse('succerss1111')
+       # return HttpResponse('succerss1111')
+        return  render(request,'login_home.html')
 
+# setting profile page
+def profile(request):
+    if request.method=='GET':
+        return render(request,'profile.html')
+
+# update account page
+def account(request):
+    if request.method=='GET':
+        return render(request,'account.html')
+
+# update email page
+def emails(request):
+    if request.method=='GET':
+        return render(request,'emails.html')
+
+# application page
+def application(request):
+    if request.method=='GET':
+        return render(request,'application.html')
+
+# yuyue reservation page
+def reservation(request):
+    if request.method=='GET':
+        return render(request,'reservation.html')
+
+# Retrieve the password
+def password_reset(request):
+    if request.method=='GET':
+        return render(request,'password_reset.html')
+
+
+#  shen qing jia ru teacher
 def acceptteacher(request):
     db=conn['Teacher']
     collecton=db.Teacher
@@ -45,14 +81,14 @@ def acceptteacher(request):
         doc={'username':profile_names,'name':profile_name,'studentid':profile_id,'phone':profile_phone,'xi':profile_faculty,'email':profile_email,'ziwo':profile_bio,'kecheng':[],'time':[],'room':[]}
         print doc
         collecton.insert(doc)
-        return HttpResponse('succerss')
+        return HttpResponse('your application is submit,please wait shenhe!')
 
+# login page
 def jion(request):
     if request.method=='GET':
         return render(request,'login.html')
 
-
-
+# teacher source list page
 def show(request):
     db=conn['Teacher']
     collecton=db.Teacher
@@ -60,7 +96,7 @@ def show(request):
         data=list(collecton.find())
         return render(request,'show.html',{'data':data})
 
-
+# login panduan
 @csrf_exempt
 def login (request):
     db=conn['Teacher']
@@ -71,22 +107,23 @@ def login (request):
          data=collecton.find_one({'user':name})
          passw=data.get('password')
          if passw==password:
+
             return render(request,'login_home.html')
          else:
-             return HttpResponse("error")
+             return HttpResponse("Your username and password didn't match!")
 
+# application jion teacher page
 def createteacher(request):
         if request.method == 'GET':
-            print 'x'
+          print 'x'
         return render(request, 'profile.html')
 
-
-
+# add subject page
 def kemu(request):
     if request.method=='GET':
         return render(request,'addsubject.html')
 
-
+# add subject
 def acceptkecheng(request):
     db=conn['Teacher']
     collecton=db.Teacher
@@ -97,21 +134,22 @@ def acceptkecheng(request):
         studentid=request.GET['studentid']
         doc={'kecheng':kecheng,'miaoshu':miaoshu}
         collecton.update({'studentid':studentid},{"$addToSet":{'kecheng':doc}})
-        return HttpResponse('success')
+        return HttpResponse('add subject success!')
 
-
+# add tutors time
 def accpetaddtime(request):
     if request.method=='GET':
         db = conn['Teacher']
         collecton = db.Teacher
-        print 'xxxxxxx'
+        #print 'xxxxxxx'
         studentid=request.GET['user']
         time=request.GET['time']
         # print collecton.find_one({'studentid':1})
         collecton.update({'studentid':studentid},{'$addToSet':{'time':time}})
         print time
-        return HttpResponse('success')
+        return HttpResponse('add tutors time success!')
 
+# this code has bug
 def addtime(request):
          if request.method == 'GET':
              print request.GET
@@ -127,11 +165,11 @@ def addtime(request):
                  return render(request, 'addtime.html')
              else:
                 #print request
-
-
                 return render(request,'addtime.html')
 
 
+
+# dai you yuyue button de teacherlist
 def teacherlist(request):
         db = conn['Teacher']
         collecton = db.Teacher

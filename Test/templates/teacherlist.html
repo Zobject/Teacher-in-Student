@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" type="text/css">
 
     <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/bootstrap.css">
+    <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/bootstrap.css">
     <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/jquery.fancybox.css">
     <link rel="stylesheet" href="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/css/flexslider.css">
@@ -60,24 +60,17 @@
 
 </head>
 <body>
-
     <!-- #header -->
     <header id="header" data-parallax="scroll" data-speed="0.2" data-natural-width="1920" data-natural-height="1080" data-image-src="https://ctld.ntu.edu.tw/ls/reservation/v3//assets/soonsite/images/content/bg/1.jpg">
 
         		<div class="header-video" >
                     <div class="flexslider loading affa_testimonials_carousel">
                         <ul class="slides">
-
                             <li> <!-- 1 -->
-
                                 <img src="https://ctld.ntu.edu.tw/ls/reservation/v3/uploads/banner_20160803175339_5784.jpg" alt="Image" />
-
-
                             </li>
                             <li> <!-- 1 -->
-
                                 <img src="https://ctld.ntu.edu.tw/ls/reservation/v3/uploads/banner_20160803175700_4092.jpg" alt="Image" />
-
                             </li>
                         </ul>
                     </div>
@@ -93,46 +86,34 @@
                 <div class="container">
 
                     <div class="navbar-brand">
-
+                        <a>
                             <img src="https://github.com/Zobject/Teacher-in-Student/blob/master/1641497855921_.pic_hd.jpg?raw=true" alt="Logo"/>
                         </a>
                         <!-- site logo -->
                     </div>
-                     <!--以下内容做了更改-->
+                     <!--导航栏-->
                     <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.html" class="smooth-scroll">首页</a></li>
+                    <li class="active"><a href="/index/" class="smooth-scroll">首页</a></li>
                     <li><a href="#" class="smooth-scroll">最新消息</a></li>
-                    <li><a href="./show.html" class="smooth-scroll">小老师介绍</a></li>
-                    <li><a href="./teacherlist.html" class="smooth-scroll">预约管理</a></li>
+                    <li><a href="/show/" class="smooth-scroll">小老师介绍</a></li>
+                    <li><a href="/teacherlist/" class="smooth-scroll">预约管理</a></li>
                     <li><a href="#" class="smooth-scroll">荣誉榜</a></li>
-                    <li><a href="./register.html" class="smooth-scroll">注册</a></li>
-                    <li><a href="./login.html" class="smooth-scroll">登录</a></li>
+                    <li><a href="/create/" class="smooth-scroll">注册</a></li>
+                    <li><a href="/jion/" class="smooth-scroll">登录</a></li>
                     </ul>
-
                 </div>
                 <!-- .container end -->
-
             </nav>
-
     <div id="teams" class="wrap-container8040">
-
         <!-- .container -->
-
         <div class="container">
-
             <div class="post-heading-center">
-
                 <h2>小老师介绍</h2>
                 <p>Introduce Tutors</p>
-
             </div>
-
             <div class="row well">
-
                 <div class="col-sm-12"> <!-- 1 -->
-
                     <div class="affa_team_profile">
-
                         <table class="table table-bordered">
                         <tr>
                             <th></th>
@@ -150,35 +131,37 @@
                              <td>1</td>
                              <td>
                                  <img src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/71cf3bc79f3df8dc440b9091ce11728b471028ff.jpg" class="img-responsive">
-                               </td>
+                             </td>
                              <td>{{d.name}}</td>
                              <td>{{d.xi}}</td>
-
                                 <td>{%for x in d.kecheng %} {{x.kecheng}}{%endfor%}<br></td>
-
                              <td>{{d.email}}</td>
                              <td>{{d.phone}}</td>
-                             <td><html>
- <head>
-  <title></title>
- </head>
- <body>
-  <p>
-   嗨~大家好！<br />
-   <br />
-   <span>系统备注：</span><br />
-   <span>此小老师可以询问： </span><br />
-   <span>{{d.ziwo}}</span></p>
- </body>
-</html>
-</td>
+                             <td>
+                                 <html>
+                                     <head>
+                                      <title></title>
+                                     </head>
+                                     <body>
+                                      <p>
+                                       嗨~大家好！<br />
+                                       <br />
+                                       <span>系统备注：</span><br />
+                                       <span>此小老师可以询问： </span><br />
+                                       <span>{{d.ziwo}}</span></p>
+                                     </body>
+                                 </html>
+                             </td>
                                 <td><a href="/yue/?id={{d.studentid}}"><input type="button" value="预约"></input></a></td>
                            </tr>
-
-
 {%endfor%}}
                         </table>
-                    </div></div></div></div></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
