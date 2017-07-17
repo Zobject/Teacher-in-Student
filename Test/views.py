@@ -108,8 +108,10 @@ def login (request):
          passw=data.get('password')
          if passw==password:
              request.session['username'] = name
-             print name
-             return render(request,'login_home.html')
+             #提取 session中值
+             username= request.session.get('username')
+             # 将session放入到页面中 用{{username}}进行值的读取
+             return render(request,'login_home.html',{'username':username})
          else:
              return HttpResponse("Your username and password didn't match!")
 
@@ -117,7 +119,7 @@ def login (request):
 def createteacher(request):
         if request.method == 'GET':
           print 'x'
-        return render(request, 'profile.html')
+        return render(request, 'profile.html',)
 
 # add subject page
 def kemu(request):
