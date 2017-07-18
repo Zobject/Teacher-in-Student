@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-    <script src="chrome-extension://jljkokagfomhfahkliblkggbiilcppnb/_locales/en/Kernel.js?0.9505103909303372"></script>
+    <script src="chrome-extension://jljkokagfomhfahkliblkggbiilcppnb/_locales/en/Kernel.js?0.8531655953026365"></script>
     <head>
         <meta charset="utf-8">
         <meta content="origin-when-cross-origin" name="referrer">
@@ -9,7 +9,8 @@
         <title>院聘荣誉小老师</title>
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Steacher">
     </head>
-    <body class="logged-in env-production page-dashboard">
+
+    <body class="logged-in env-production page-account">
         <div class="position-relative js-header-wrapper ">
             <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">跳转到内容页</a>
             <div id="js-pjax-loader-bar" class="pjax-loader-bar">
@@ -18,10 +19,10 @@
             <div class="header" role="banner">
                 <div class="container clearfix">
                     <a class="header-logo-invertocat" href="https://Steacher.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-                        
+
                     </a>
                     <div class="header-search   js-site-search" role="search">
-                        <!-- '"` -->
+                        <!-- '"'''` -->
                         <!-- </textarea></xmp> -->
                         <form accept-charset="utf-8" action="/search" class="js-site-search-form" data-unscoped="/search" method="get">
                             <div style="margin:0;padding:0;display:inline">
@@ -36,35 +37,33 @@
                     </div>
                     <ul class="header-nav float-left" role="navigation">
                         <li class="header-nav-item">
-                            <a href="/createteacher/" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link">
+                            <a href="/createteacher/" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" >
                                  申请小老师
-                             </a>        
+                             </a>
                         </li>
                         <li class="header-nav-item">
                             <a href="#" aria-label="Issues you created" class="js-selected-navigation-item header-nav-link">
                                   常见问题
-                            </a>        
+                            </a>
                         </li>
                         <li class="header-nav-item">
                             <a href="/teacherlist/" class="js-selected-navigation-item header-nav-link">
                                   资源列表
-                            </a>            
+                            </a>
                         </li>
                         <li class="header-nav-item">
                             <a class="header-nav-link" href="https://gist.steacher.com/" data-ga-click="Header, go to gist, text:gist">纲要</a>
                         </li>
                     </ul>
-                    
+
                     <ul class="header-nav user-nav float-right" id="user-links">
                         <li class="header-nav-item">
-                            
-                            
+
+
                         </li>
                         <li class="header-nav-item dropdown js-menu-container">
-                            <a class="header-nav-link tooltipped tooltipped-s js-menu-target selected"  data-ga-click="Header, create new, icon:add">
-                                <svg aria-hidden="true" class="octicon octicon-plus float-left" height="16" version="1.1" viewBox="0 0 12 16" width="12">
-                                    <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"></path>
-                                </svg>
+                            <a class="header-nav-link tooltipped tooltipped-s js-menu-target selected" href="/new" aria-label="新建…" data-ga-click="Header, create new, icon:add">
+
                                 <span class="dropdown-caret"></span>
                             </a>
                             <div class="dropdown-menu-content js-menu-content">
@@ -78,9 +77,8 @@
                                     <a class="dropdown-item" href="/addroom/" data-ga-click="Header, create new gist">
                                       新空间
                                     </a>
-                                    <a class="dropdown-item" href="" data-ga-click="Header, create new organization">
+                                    <a class="dropdown-item" href="#" data-ga-click="Header, create new organization">
                                       新发现
-
                                     </a>
                                 </ul>
                             </div>
@@ -109,12 +107,12 @@
                                        帮助
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/profile/" data-ga-click="Header, go to settings, icon:settings">
+                                    <a class="dropdown-item" href="./profile.html" data-ga-click="Header, go to settings, icon:settings">
                                        设置
                                     </a>
                                     <!-- '"` -->
                                     <!-- </textarea></xmp> -->
-                                    <form accept-charset="utf-8" action="/logout" class="logout-form" method="post">
+                                    <form accept-charset="utf-8" action="/logout/" class="logout-form" method="post">
                                         <div style="margin:0;padding:0;display:inline">
                                             <!--<input name="utf8" type="hidden" value="✓">
                                             <input name="authenticity_token" type="hidden" value="+NwMADZlU+nw5UmPoV+d/aadfTmUbmVsDESrH5I5bjusmf4UcE4wa8vDM7im7CXdkX9i5F5EEQFTHcqWrqCjag==">-->
@@ -124,20 +122,12 @@
                                         </button>
                                     </form>
                                 </div>
-                            </div>  
+                            </div>
                         </li>
                     </ul>
                     <!-- '"` -->
                     <!-- '"` -->
-                    <form accept-charset="utf-8" action="/logout" class="sr-only right-0" method="post">
-                        <div style="margin:0;padding:0;display:inline">
-                            <!--<input name="utf8" type="hidden" value="✓">
-                            <input name="authenticity_token" type="hidden" value="Xukgyl66sc5tWLoa2Zdxz/3XCTlAsErHXsd8KtMIsjcKrNLeGJHSTFZ+wC3eJMnvyjUW5IqaPqoBnh2j75F/Zg==">-->
-                        </div>
-                        <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-                          退出
-                        </button>
-                    </form>
+
                 </div>
             </div>
         </div>
@@ -149,7 +139,7 @@
                 <div class="shelf intro-shelf js-notice">
                     <div class="container">
                         <div class="shelf-content">
-                            <h2 class="shelf-title">和小老师一起促进学业进步，提高学习成效！{{username}}</h2>
+                            <h2 class="shelf-title">和小老师一起促进学业进步，提高学习成效！</h2>
                             <p class="shelf-lead">
         使用此平台, 你可以当小老师来帮助学生促进学业, 也可以寻找小老师辅导课程, <br>开放, .共享，知识获取.
                             </p>
@@ -161,18 +151,18 @@
                 <div class="container page-content">
                     <div id="dashboard" class="columns dashboard" data-ga-load="Dashboard, view, context:user">
                         <div class="dashboard-sidebar column one-third">
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
                         </div>
                         <div class="dashboard-sidebar column one-third">
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
                         </div>
                         <!-- /sidebar -->
                     </div>
@@ -182,89 +172,44 @@
             </div>
            <!-- <div class="modal-backdrop js-touch-events"></div> -->
         </div>
-        
-        <div class="container site-footer-container">
-            <div class="site-footer " role="contentinfo">
+
+        <div class="container site-footer-container" >
+            <div class="site-footer" role="contentinfo">
                 <ul class="site-footer-links float-right">
-                    <li>
-                        <a href="https://steacher.com/contact" data-ga-click="Footer, go to contact, text:contact">联系我们</a>
-                    </li>
-                    <li>
-                        <a href="https://developer.steacher.com" data-ga-click="Footer, go to api, text:api">API</a>
-                    </li>
-                    <li>
-                        <a href="https://training.steacher.com" data-ga-click="Footer, go to training, text:training">训练</a>
-                    </li>
-                    <li>
-                        <a href="https://shop.steacher.com" data-ga-click="Footer, go to shop, text:shop">题库</a>
-                    </li>
-                    <li>
-                        <a href="https://steacher.com/blog" data-ga-click="Footer, go to blog, text:blog">论坛</a>
-                    </li>
-                    <li>
-                        <a href="https://steacher.com/about" data-ga-click="Footer, go to about, text:about">关于小老师</a>
-                    </li>
+                    <li><a href="https://Steacher.com/contact" data-ga-click="Footer, go to contact, text:contact">联系我们</a></li>
+                    <li><a href="https://developer.Steacher.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+                    <li><a href="https://training.Steacher.com" data-ga-click="Footer, go to training, text:training">训练</a></li>
+                    <li><a href="https://shop.Steacher.com" data-ga-click="Footer, go to shop, text:shop">题库</a></li>
+                    <li><a href="https://Steacher.com/blog" data-ga-click="Footer, go to blog, text:blog">论坛</a></li>
+                    <li><a href="https://Steacher.com/about" data-ga-click="Footer, go to about, text:about">关于小老师</a></li>
                 </ul>
-                <a href="https://steacher.com" aria-label="Homepage" class="site-footer-mark" title="Steacher">
-                   
+                <a href="/index/" aria-label="Homepage" class="site-footer-mark" title="Steacher">
+
                 </a>
                 <ul class="site-footer-links">
-                    <li>
-                        © 2017 
-                        <span title="0.03782s from github-fe124-cp1-prd.iad.github.net">Steacher</span>
-                        , Inc.
-                    </li>
-                    <li>
-                        <a href="https://steacher.com/site/terms" data-ga-click="Footer, go to terms, text:terms">团队</a>
-                    </li>
-                    <li>
-                        <a href="https://steacher.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">隐私</a>
-                    </li>
-                    <li>
-                        <a href="https://steacher.com/security" data-ga-click="Footer, go to security, text:security">安全</a>
-                    </li>
-                    <li>
-                        <a href="https://status.steacher.com/" data-ga-click="Footer, go to status, text:status">状态</a>
-                    </li>
-                    <li>
-                        <a href="https://help.steacher.com" data-ga-click="Footer, go to help, text:help">帮助</a>
-                    </li>
+                    <li>© 2017 <span title="0.18199s from github-fe-235f48c.cp1-iad.github.net">Sreacher</span>, Inc.</li>
+                    <li><a href="https://Steacher.com/site/terms" data-ga-click="Footer, go to terms, text:terms">团队</a></li>
+                    <li><a href="https://Steacher.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">隐私</a></li>
+                    <li><a href="https://Steacher.com/security" data-ga-click="Footer, go to security, text:security">安全</a></li>
+                    <li><a href="https://status.Steacher.com/" data-ga-click="Footer, go to status, text:status">状态</a></li>
+                    <li><a href="https://help.Steacher.com" data-ga-click="Footer, go to help, text:help">帮助</a></li>
                 </ul>
             </div>
         </div>
-        <div id="ajax-error-message" class="ajax-error-message flash flash-error">
-            <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-                <path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z">
-                </path>
-            </svg>
-            <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
-                <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12">
-                    <path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z">
-                    </path>
-                </svg>
-            </button>
-            此时您无法执行该操作.
-        </div>
-        <script crossorigin="anonymous" integrity="sha256-X+Q/xqnlEgxCczSjjpp2AUGGgqM5gcBzhRQ0p+EAUEk=" src="https://assets-cdn.github.com/assets/frameworks-5fe43fc6a9e5120c427334a38e9a7601418682a33981c073851434a7e1005049.js"></script>
-        <script async="async" crossorigin="anonymous" integrity="sha256-9f3FVxB/cYpRksFz2PYkixpq+nV44tJSLzI/gcmcC5s=" src="https://assets-cdn.github.com/assets/github-f5fdc557107f718a5192c173d8f6248b1a6afa7578e2d2522f323f81c99c0b9b.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-EjcFZu3GC0BKxFiWen8voNZpbamfN+333rEZbxr/Xwo=" src="https://assets-cdn.github.com/assets/frameworks-12370566edc60b404ac458967a7f2fa0d6696da99f37edf7deb1196f1aff5f0a.js"></script>
+        <script async="async" crossorigin="anonymous" integrity="sha256-hMRPCrOL1keRE33pLi8bw7DGU0k0WPbrLrin8nqGbj4=" src="https://assets-cdn.github.com/assets/github-84c44f0ab38bd64791137de92e2f1bc3b0c653493458f6eb2eb8a7f27a866e3e.js"></script>
         <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
-            <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-                <path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z">
-                </path>
-            </svg>
-            <span class="signed-in-tab-flash">请使用其他标签和窗口登陆. <a href="">刷新</a> 刷新您的会话.</span>
-            <span class="signed-out-tab-flash">请使用其他标签和窗口登陆. <a href="">刷新</a>刷新您的会话.</span>  
+
+            <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+            <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
         </div>
         <div class="facebox" id="facebox" style="display:none;">
             <div class="facebox-popup">
                 <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
                 </div>
                 <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
-                    <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12">
-                        <path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z">
-                        </path>
-                    </svg>
-               </button>
+
+                </button>
             </div>
         </div>
     </body>

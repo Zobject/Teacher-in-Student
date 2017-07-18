@@ -108,12 +108,19 @@ def login (request):
          passw=data.get('password')
          if passw==password:
              request.session['username'] = name
-             #提取 session中值
+             # get session values
              username= request.session.get('username')
-             # 将session放入到页面中 用{{username}}进行值的读取
              return render(request,'login_home.html',{'username':username})
          else:
              return HttpResponse("Your username and password didn't match!")
+
+@csrf_exempt
+def logout(request):
+    if request.method=='POST':
+        if usernam in request.session:
+            del request.session['username']
+            return render(request,'login.html')
+
 
 # application jion teacher page
 def createteacher(request):
