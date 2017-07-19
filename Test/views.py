@@ -12,9 +12,18 @@ except:
 
 
 # render home page
+#def index(request):
+#   if request.method=='GET':
+#        return render(request,'index.html')
+
 def index(request):
-    if request.method=='GET':
+    if 'username' in request.session:
+        username= request.session['username']
+        print username
+        return render(request,'index.html',{'username':username})
+    else:
         return render(request,'index.html')
+
 
 # register user page
 def create(request):
@@ -38,27 +47,47 @@ def createuser(request):
 # setting profile page
 def profile(request):
     if request.method=='GET':
-        return render(request,'profile.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'profile.html',{'username':username})
+        else:
+            return render(request,'profile.html')
 
 # update account page
 def account(request):
     if request.method=='GET':
-        return render(request,'account.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'account.html',{'username':username})
+        else:
+            return render(request,'login.html')
 
 # update email page
 def emails(request):
     if request.method=='GET':
-        return render(request,'emails.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'emails.html',{'username':username})
+        else:
+            return render(request,'login.html')
 
 # application page
 def application(request):
     if request.method=='GET':
-        return render(request,'application.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'application.html',{'username':username})
+        else:
+            return render(request,'login.html')
 
 # yuyue reservation page
 def reservation(request):
     if request.method=='GET':
-        return render(request,'reservation.html')
+        if 'username' in request.session:
+            username = request.session['username']
+            return render(request, 'reservation.html', {'username': username})
+        else:
+            return render(request, 'login.html')
 
 # Retrieve the password
 def password_reset(request):
@@ -117,21 +146,36 @@ def login (request):
 @csrf_exempt
 def logout(request):
     if request.method=='POST':
-        if usernam in request.session:
-            del request.session['username']
-            return render(request,'login.html')
+        del request.session['username']
+        return render(request,'login.html')
+    else:
+        del request.session['username']
+        return render(request,'index.html')
+
+#def loginout(request):
+#    if request.method=='GET':
+#    del request.session['username']
+#    return (request,'index.html')
 
 
 # application jion teacher page
 def createteacher(request):
         if request.method == 'GET':
-          print 'x'
-        return render(request, 'profile.html',)
+            if 'username' in request.session:
+                username=request.session['username']
+                return render(request,'profile.html',{'username':username})
+            else:
+#          print 'x'
+                return render(request, 'login.html',)
 
 # add subject page
 def kemu(request):
     if request.method=='GET':
-        return render(request,'addsubject.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'addsubject.html',{'username':username})
+        else:
+            return render(request,'login.html')
 
 # add subject
 def acceptkecheng(request):
@@ -163,6 +207,12 @@ def accpetaddtime(request):
 def addtime(request):
          if request.method == 'GET':
              print request.GET
+             if 'username' in request.session:
+                 username=request.session['username']
+                 return render(request,'addtime.html',{'username':username})
+             else:
+                 return render(request,'login.html')
+         else:
              if  request.GET.has_key('user') :
                  db = conn['Teacher']
                  collecton = db.Teacher
@@ -198,6 +248,12 @@ def yue(request):
 def addroom(request):
         if request.method == 'GET':
             print request.GET
+            if 'username' in request.session:
+                username=request.session['username']
+                return render(request,'addroom.html',{'username':username})
+            else:
+                return render(request,'login.html')
+        else:
             if request.GET.has_key('user'):
                 db = conn['Teacher']
                 collecton = db.Teacher

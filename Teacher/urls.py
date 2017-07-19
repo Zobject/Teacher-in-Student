@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^admin/$', admin.site.urls),
     url(r'jion/$',views.jion),
     url(r'login/$',views.login),
+    url(r'logout/$',views.logout),
+#    url(r'loginout/$',views.loginout),
     url(r'create/$',views.create),
     url(r'createteacher/$',views.createteacher),
     url(r'acceptteacher/$',views.acceptteacher),

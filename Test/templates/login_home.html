@@ -36,9 +36,19 @@
                         </form>
                     </div>
                     <ul class="header-nav float-left" role="navigation">
+                         <li class="header-nav-item">
+                            <a href="/index/" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" >
+                                 首页
+                             </a>
+                        </li>
                         <li class="header-nav-item">
                             <a href="/createteacher/" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" >
                                  申请小老师
+                             </a>
+                        </li>
+                          <li class="header-nav-item">
+                            <a href="/teacherlist/" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" >
+                                 预约管理
                              </a>
                         </li>
                         <li class="header-nav-item">
@@ -112,11 +122,8 @@
                                     </a>
                                     <!-- '"` -->
                                     <!-- </textarea></xmp> -->
-                                    <form accept-charset="utf-8" action="/logout/" class="logout-form" method="post">
-                                        <div style="margin:0;padding:0;display:inline">
-                                            <!--<input name="utf8" type="hidden" value="✓">
-                                            <input name="authenticity_token" type="hidden" value="+NwMADZlU+nw5UmPoV+d/aadfTmUbmVsDESrH5I5bjusmf4UcE4wa8vDM7im7CXdkX9i5F5EEQFTHcqWrqCjag==">-->
-                                        </div>
+                                    <form accept-charset="utf-8" action="/logout/" class="logout-form" method="POST">
+                                        {% csrf_token %}
                                         <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
                                            退出
                                         </button>
