@@ -25,7 +25,8 @@ urlpatterns = [
     url(r'jion/$',views.jion),
     url(r'login/$',views.login),
     url(r'logout/$',views.logout),
-#    url(r'loginout/$',views.loginout),
+    url(r'up_user/$',views.up_user),
+    url(r'up_userinfo/$',views.up_userinfo),
     url(r'create/$',views.create),
     url(r'createteacher/$',views.createteacher),
     url(r'acceptteacher/$',views.acceptteacher),
@@ -44,7 +45,7 @@ urlpatterns = [
     url(r'yue/$',views.yue),
     url(r'teacherlist/$',views.teacherlist),
     url(r'addroom',views.addroom),
-   url(r'',views.index),
+    url(r'',views.index),
 
     # url(r'createkemu/$',views.tianjiakemu),
 ]

@@ -16,6 +16,7 @@ except:
 #   if request.method=='GET':
 #        return render(request,'index.html')
 
+
 def index(request):
     if 'username' in request.session:
         username= request.session['username']
@@ -31,18 +32,25 @@ def create(request):
         #print 'x'
      return render(request,'register.html')
 
+
 # register user
+@csrf_exempt
 def createuser(request):
     db=conn['Teacher']
     collecton=db.User
-    if request.method=='GET':
-        user=request.GET['user']
-        email=request.GET['email']
-        password=request.GET['password']
-        doc={'password':password,'user':user,'email':email}
-        collecton.insert(doc)
-       # return HttpResponse('succerss1111')
-        return  render(request,'login_home.html')
+    if request.method=='POST':
+        user=request.POST['user']
+        email=request.POST['email']
+        password=request.POST['password']
+        if collecton.find({'user':user}).count()==0 or collecton.find({'email':email}).count()==0:
+            doc={'password':password,'user':user,'email':email}
+            collecton.insert(doc)
+            request.session['username']=user
+            username=request.session.get('username')
+            return  render(request,'login_home.html',{'username':username})
+        else:
+            return render(request,'register.html')
+
 
 # setting profile page
 def profile(request):
@@ -53,6 +61,7 @@ def profile(request):
         else:
             return render(request,'profile.html')
 
+
 # update account page
 def account(request):
     if request.method=='GET':
@@ -61,6 +70,7 @@ def account(request):
             return render(request,'account.html',{'username':username})
         else:
             return render(request,'login.html')
+
 
 # update email page
 def emails(request):
@@ -71,6 +81,7 @@ def emails(request):
         else:
             return render(request,'login.html')
 
+
 # application page
 def application(request):
     if request.method=='GET':
@@ -80,6 +91,7 @@ def application(request):
         else:
             return render(request,'login.html')
 
+
 # yuyue reservation page
 def reservation(request):
     if request.method=='GET':
@@ -88,6 +100,7 @@ def reservation(request):
             return render(request, 'reservation.html', {'username': username})
         else:
             return render(request, 'login.html')
+
 
 # Retrieve the password
 def password_reset(request):
@@ -111,6 +124,32 @@ def acceptteacher(request):
         print doc
         collecton.insert(doc)
         return HttpResponse('your application is submit,please wait shenhe!')
+
+
+# updata user information
+def up_userinfo(request):
+    db=conn['Teacher']
+    collecton=db.User
+    if request.method=='GET':
+        user=request.GET['user']
+        names=request.GET['names']
+        student_id=request.GET['student_id']
+        phone=request.GET['phone']
+        faculty=request.GET['faculty']
+        email=request.GET['email']
+        # doc={'names':names,'student_id':student_id,'phone':phone,'faculty':faculty,'email':email}
+        collecton.update({'user':user},{'$set':{'names':names,'student_id':student_id,'phone':phone,'faculty':faculty,'email':email}})
+        return HttpResponse('SUCCESS')
+
+
+def up_user(request):
+    if request.method=='GET':
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'upuserinfo.html',{'username':username})
+        else:
+            return render(request,'login.html')
+
 
 # login page
 def jion(request):
@@ -151,11 +190,6 @@ def logout(request):
     else:
         del request.session['username']
         return render(request,'index.html')
-
-#def loginout(request):
-#    if request.method=='GET':
-#    del request.session['username']
-#    return (request,'index.html')
 
 
 # application jion teacher page
@@ -269,9 +303,9 @@ def addroom(request):
                 return render(request, 'addroom.html')
 
 
-# def tianjiakemu(request):
-#     if request.method=='GET':
-#      return HttpResponse('ssss')
-# db = conn['Teacher']
-# collecton = db.Teacher
-# print collecton.find_one({'studentid':'1'})
+
+
+# admin manage
+
+# admin login
+# def superuser(request):
