@@ -92,7 +92,7 @@
                             <div class="dropdown-menu-content js-menu-content" aria-expanded="false">
                                 <div class="dropdown-menu dropdown-menu-sw">
                                     <div class="dropdown-header header-nav-current-user css-truncate">
-                                    登陆用户为: <strong class="css-truncate-target">user</strong>
+                                    登陆用户为: <strong class="css-truncate-target">{{username}}</strong>
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-ga-click="Header, go to profile, text:your profile">
@@ -108,15 +108,15 @@
                                        帮助
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/profile/" data-ga-click="Header, go to settings, icon:settings">
+                                    <a class="dropdown-item" href="/up_user/" data-ga-click="Header, go to settings, icon:settings">
                                        设置
                                     </a>
                                     <!-- '"` -->
                                     <!-- </textarea></xmp> -->
-                                    <form accept-charset="utf-8" action="/logout" class="logout-form" method="post">
+                                    <form accept-charset="utf-8" action="/logout/" class="logout-form" method="post">
                                         <div style="margin:0;padding:0;display:inline">
-                                            <input name="utf8" type="hidden" value="✓">
-                                            <input name="authenticity_token" type="hidden" value="+NwMADZlU+nw5UmPoV+d/aadfTmUbmVsDESrH5I5bjusmf4UcE4wa8vDM7im7CXdkX9i5F5EEQFTHcqWrqCjag==">
+                                            <!--<input name="utf8" type="hidden" value="✓">
+                                            <input name="authenticity_token" type="hidden" value="+NwMADZlU+nw5UmPoV+d/aadfTmUbmVsDESrH5I5bjusmf4UcE4wa8vDM7im7CXdkX9i5F5EEQFTHcqWrqCjag==">-->
                                         </div>
                                         <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
                                            退出
@@ -128,15 +128,7 @@
                     </ul>
                     <!-- '"` -->
                     <!-- '"` -->
-                    <form accept-charset="utf-8" action="/logout" class="sr-only right-0" method="post">
-                        <div style="margin:0;padding:0;display:inline">
-                            <input name="utf8" type="hidden" value="✓">
-                            <input name="authenticity_token" type="hidden" value="Xukgyl66sc5tWLoa2Zdxz/3XCTlAsErHXsd8KtMIsjcKrNLeGJHSTFZ+wC3eJMnvyjUW5IqaPqoBnh2j75F/Zg==">
-                        </div>
-                        <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-                          退出
-                        </button>
-                    </form>
+
                 </div>
             </div>
         </div>
@@ -165,13 +157,13 @@
                         <div class="vcard-names-container py-3 js-sticky js-user-profile-sticky-fields" style="position: static; top: 0px; left: 184.5px; width: 229px;">
                             <h1 class="vcard-names">
                                 <span class="vcard-fullname d-block" itemprop="name"></span>
-                                <span class="vcard-username d-block" itemprop="additionalName">tomliang2017</span>
+                                <span class="vcard-username d-block" itemprop="additionalName">{{username}}</span>
                             </h1>
                         </div>
                         <p class="mb-3">
-                            <a href="/settings/profile?focus_bio=1">添加新课程</a>
+                            <a href="/kemu/">添加新课程</a>
                         </p>
-                        <a href="/account" class="btn btn-block mb-3">编辑个人信息</a>
+                        <a href="/up_user/" class="btn btn-block mb-3">编辑个人信息</a>
                         <ul class="vcard-details border-top border-gray-light py-3">
                             <li aria-label="Member since" class="vcard-detail pt-1 css-truncate css-truncate-target">
                                 <svg aria-hiddn="ture" class="octicon octicon-clock" height="16" version="1.1" viewBox="0 0 14 16" width="14">
