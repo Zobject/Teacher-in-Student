@@ -15,9 +15,19 @@ except:
 
 db=conn['Teacher']
 # render home page
+#def index(request):
+#   if request.method=='GET':
+#        return render(request,'index.html')
+
+
 def index(request):
-    if request.method=='GET':
+    if 'username' in request.session:
+        username= request.session['username']
+        print username
+        return render(request,'index.html',{'username':username})
+    else:
         return render(request,'index.html')
+
 
 # register user page
 def create(request):
@@ -25,43 +35,75 @@ def create(request):
         #print 'x'
      return render(request,'register.html')
 
+
 # register user
+@csrf_exempt
 def createuser(request):
 
     collecton=db.User
-    if request.method=='GET':
-        user=request.GET['user']
-        email=request.GET['email']
-        password=request.GET['password']
-        doc={'password':password,'user':user,'email':email}
-        collecton.insert(doc)
-       # return HttpResponse('succerss1111')
-        return  render(request,'login_home.html')
+    if request.method=='POST':
+        user=request.POST['user']
+        email=request.POST['email']
+        password=request.POST['password']
+        if collecton.find({'user':user}).count()==0 or collecton.find({'email':email}).count()==0:
+            doc={'password':password,'user':user,'email':email}
+            collecton.insert(doc)
+            request.session['username']=user
+            username=request.session.get('username')
+            return  render(request,'login_home.html',{'username':username})
+        else:
+            return render(request,'register.html')
+
 
 # setting profile page
 def profile(request):
     if request.method=='GET':
-        return render(request,'profile.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'profile.html',{'username':username})
+        else:
+            return render(request,'profile.html')
+
 
 # update account page
 def account(request):
     if request.method=='GET':
-        return render(request,'account.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'account.html',{'username':username})
+        else:
+            return render(request,'login.html')
+
 
 # update email page
 def emails(request):
     if request.method=='GET':
-        return render(request,'emails.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'emails.html',{'username':username})
+        else:
+            return render(request,'login.html')
+
 
 # application page
 def application(request):
     if request.method=='GET':
-        return render(request,'application.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'application.html',{'username':username})
+        else:
+            return render(request,'login.html')
+
 
 # yuyue reservation page
 def reservation(request):
     if request.method=='GET':
-        return render(request,'reservation.html')
+        if 'username' in request.session:
+            username = request.session['username']
+            return render(request, 'reservation.html', {'username': username})
+        else:
+            return render(request, 'login.html')
+
 
 # Retrieve the password
 def password_reset(request):
@@ -85,6 +127,32 @@ def acceptteacher(request):
         print doc
         collecton.insert(doc)
         return HttpResponse('your application is submit,please wait shenhe!')
+
+
+# updata user information
+def up_userinfo(request):
+    db=conn['Teacher']
+    collecton=db.User
+    if request.method=='GET':
+        user=request.GET['user']
+        names=request.GET['names']
+        student_id=request.GET['student_id']
+        phone=request.GET['phone']
+        faculty=request.GET['faculty']
+        email=request.GET['email']
+        # doc={'names':names,'student_id':student_id,'phone':phone,'faculty':faculty,'email':email}
+        collecton.update({'user':user},{'$set':{'names':names,'student_id':student_id,'phone':phone,'faculty':faculty,'email':email}})
+        return HttpResponse('SUCCESS')
+
+
+def up_user(request):
+    if request.method=='GET':
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'upuserinfo.html',{'username':username})
+        else:
+            return render(request,'login.html')
+
 
 # login page
 def jion(request):
@@ -111,23 +179,51 @@ def login (request):
          passw=data.get('password')
          if passw==password:
              request.session['username'] = name
+<<<<<<< HEAD
              #提取 session中值
              username= request.session.get('username')
              # 将session放入到页面中 用{{username}}进行值的读取
+=======
+             # get session values
+             username= request.session.get('username')
+>>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
              return render(request,'login_home.html',{'username':username})
          else:
              return HttpResponse("Your username and password didn't match!")
 
+@csrf_exempt
+def logout(request):
+    if request.method=='POST':
+        del request.session['username']
+        return render(request,'login.html')
+    else:
+        del request.session['username']
+        return render(request,'index.html')
+
+
 # application jion teacher page
 def createteacher(request):
         if request.method == 'GET':
+<<<<<<< HEAD
           print 'x'
         return render(request, 'profile.html',)
+=======
+            if 'username' in request.session:
+                username=request.session['username']
+                return render(request,'profile.html',{'username':username})
+            else:
+#          print 'x'
+                return render(request, 'login.html',)
+>>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
 
 # add subject page
 def kemu(request):
     if request.method=='GET':
-        return render(request,'addsubject.html')
+        if 'username' in request.session:
+            username=request.session['username']
+            return render(request,'addsubject.html',{'username':username})
+        else:
+            return render(request,'login.html')
 
 # add subject
 def acceptkecheng(request):
@@ -159,6 +255,12 @@ def accpetaddtime(request):
 def addtime(request):
          if request.method == 'GET':
              print request.GET
+             if 'username' in request.session:
+                 username=request.session['username']
+                 return render(request,'addtime.html',{'username':username})
+             else:
+                 return render(request,'login.html')
+         else:
              if  request.GET.has_key('user') :
                  db = conn['Teacher']
                  collecton = db.Teacher
@@ -194,6 +296,12 @@ def yue(request):
 def addroom(request):
         if request.method == 'GET':
             print request.GET
+            if 'username' in request.session:
+                username=request.session['username']
+                return render(request,'addroom.html',{'username':username})
+            else:
+                return render(request,'login.html')
+        else:
             if request.GET.has_key('user'):
                 db = conn['Teacher']
                 collecton = db.Teacher
@@ -209,6 +317,7 @@ def addroom(request):
                 return render(request, 'addroom.html')
 
 
+<<<<<<< HEAD
 #添加新闻页面
 def addnews(request):
     if request.method=='GET':
@@ -247,3 +356,11 @@ def accpedelnews(request):
 # db = conn['Teacher']
 # collecton = db.Teacher
 # print collecton.find_one({'studentid':'1'})
+=======
+
+
+# admin manage
+
+# admin login
+# def superuser(request):
+>>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3

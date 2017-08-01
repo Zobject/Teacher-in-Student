@@ -95,7 +95,7 @@
                             <div class="dropdown-menu-content js-menu-content" aria-expanded="false">
                                 <div class="dropdown-menu dropdown-menu-sw">
                                     <div class="dropdown-header header-nav-current-user css-truncate">
-                                    登陆用户为: <strong class="css-truncate-target">user</strong>
+                                    登陆用户为: <strong class="css-truncate-target">{{username}}</strong>
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-ga-click="Header, go to profile, text:your profile">
@@ -111,12 +111,12 @@
                                        帮助
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/profile、" data-ga-click="Header, go to settings, icon:settings">
+                                    <a class="dropdown-item" href="/up_user/" data-ga-click="Header, go to settings, icon:settings">
                                        设置
                                     </a>
                                     <!-- '"` -->
                                     <!-- </textarea></xmp> -->
-                                    <form accept-charset="utf-8" action="/logout" class="logout-form" method="post">
+                                    <form accept-charset="utf-8" action="/logout/" class="logout-form" method="post">
                                         <div style="margin:0;padding:0;display:inline">
                                             <!--<input name="utf8" type="hidden" value="✓">
                                             <input name="authenticity_token" type="hidden" value="+NwMADZlU+nw5UmPoV+d/aadfTmUbmVsDESrH5I5bjusmf4UcE4wa8vDM7im7CXdkX9i5F5EEQFTHcqWrqCjag==">-->
@@ -131,15 +131,7 @@
                     </ul>
                     <!-- '"` -->
                     <!-- '"` -->
-                    <form accept-charset="utf-8" action="/logout" class="sr-only right-0" method="post">
-                        <div style="margin:0;padding:0;display:inline">
-                            <!--<input name="utf8" type="hidden" value="✓">
-                            <input name="authenticity_token" type="hidden" value="Xukgyl66sc5tWLoa2Zdxz/3XCTlAsErHXsd8KtMIsjcKrNLeGJHSTFZ+wC3eJMnvyjUW5IqaPqoBnh2j75F/Zg==">-->
-                        </div>
-                        <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-                          退出
-                        </button>
-                    </form>
+
                 </div>
             </div>
         </div>
@@ -154,7 +146,8 @@
                             <h3 class="menu-heading">
                               个人设置
                             </h3>
-                            <a href="/profile/" class="js-selected-navigation-item selected menu-item">个人概况</a>
+                            <a href="/up_user/" class="js-selected-navigation-item selected selected menu-item">个人概况</a>
+                            <a href="/profile/" class="js-selected-navigation-item menu-item">申请小老师</a>
                             <a href="/account/" class="js-selected-navigation-item menu-item">账户管理</a>
                             <a href="/emails/" class="js-selected-navigation-item menu-item">
                                   Emails
