@@ -2,7 +2,10 @@ from django.shortcuts import render
 from  django.http import HttpResponse
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
+from bson import objectid
 
+
+import  xlrd
 
 import pymongo
 try:
@@ -10,7 +13,7 @@ try:
 except:
     print 'fail'
 
-
+db=conn['Teacher']
 # render home page
 def index(request):
     if request.method=='GET':
@@ -24,7 +27,7 @@ def create(request):
 
 # register user
 def createuser(request):
-    db=conn['Teacher']
+
     collecton=db.User
     if request.method=='GET':
         user=request.GET['user']
@@ -108,8 +111,10 @@ def login (request):
          passw=data.get('password')
          if passw==password:
              request.session['username'] = name
-             print name
-             return render(request,'login_home.html')
+             #提取 session中值
+             username= request.session.get('username')
+             # 将session放入到页面中 用{{username}}进行值的读取
+             return render(request,'login_home.html',{'username':username})
          else:
              return HttpResponse("Your username and password didn't match!")
 
@@ -117,7 +122,7 @@ def login (request):
 def createteacher(request):
         if request.method == 'GET':
           print 'x'
-        return render(request, 'profile.html')
+        return render(request, 'profile.html',)
 
 # add subject page
 def kemu(request):
@@ -204,6 +209,38 @@ def addroom(request):
                 return render(request, 'addroom.html')
 
 
+#添加新闻页面
+def addnews(request):
+    if request.method=='GET':
+        return render(request,'addnews.html')
+
+#获得页面信息
+def acceptnews(request):
+    if request.method=='GET':
+        title=request.GET['title']
+        content=request.GET['content']
+        collecton=db.News
+        collecton.insert({'title':title,'content':content})
+    return HttpResponse('success')
+#新闻展示列表
+def delnews(request):
+    if request.method=='GET':
+        collection=db.News
+        data=list(collection.find({}))
+        return  render(request,'delnews.html',{'data':data})
+
+#接受删除信息
+def accpedelnews(request):
+    if request.method=='GET':
+        id=request.GET['id']
+        collecton = db.News
+        collecton.romove({'_id':objectid(id)})
+        return  HttpResponse('success')
+
+
+
+
+#
 # def tianjiakemu(request):
 #     if request.method=='GET':
 #      return HttpResponse('ssss')
