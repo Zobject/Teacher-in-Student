@@ -22,7 +22,7 @@ from Test import views
 # add some url
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
-<<<<<<< HEAD
+
     url(r'^jion/$',views.jion),
     url(r'^login/$',views.login),
     url(r'^create/$',views.create),
@@ -43,34 +43,10 @@ urlpatterns = [
     url(r'^yue/$',views.yue),
     url(r'^teacherlist/$',views.teacherlist),
     url(r'^addroom',views.addroom),
-    
    url(r'',views.index),
-=======
-    url(r'jion/$',views.jion),
-    url(r'login/$',views.login),
-    url(r'logout/$',views.logout),
-    url(r'up_user/$',views.up_user),
-    url(r'up_userinfo/$',views.up_userinfo),
-    url(r'create/$',views.create),
-    url(r'createteacher/$',views.createteacher),
-    url(r'acceptteacher/$',views.acceptteacher),
-    url(r'createuser/$',views.createuser),
-    url(r'show/$',views.show),
-    url(r'profile/$',views.profile),
-    url(r'account/$',views.account),
-    url(r'emails/$',views.emails),
-    url(r'application/$',views.application),
-    url(r'reservation/$',views.reservation),
-    url(r'password_reset/$',views.password_reset),
-    url(r'kemu/$',views.kemu),
-    url(r'acceptkecheng/$',views.acceptkecheng),
-    url(r'addtime/$',views.addtime),
-    url(r'addtime/$',views.accpetaddtime),
-    url(r'yue/$',views.yue),
-    url(r'teacherlist/$',views.teacherlist),
-    url(r'addroom',views.addroom),
-    url(r'',views.index),
->>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
+
+
+
 
     # url(r'createkemu/$',views.tianjiakemu),
 ]

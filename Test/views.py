@@ -179,14 +179,14 @@ def login (request):
          passw=data.get('password')
          if passw==password:
              request.session['username'] = name
-<<<<<<< HEAD
+
              #提取 session中值
              username= request.session.get('username')
              # 将session放入到页面中 用{{username}}进行值的读取
-=======
+
              # get session values
              username= request.session.get('username')
->>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
+
              return render(request,'login_home.html',{'username':username})
          else:
              return HttpResponse("Your username and password didn't match!")
@@ -204,17 +204,17 @@ def logout(request):
 # application jion teacher page
 def createteacher(request):
         if request.method == 'GET':
-<<<<<<< HEAD
-          print 'x'
-        return render(request, 'profile.html',)
-=======
+
+            print 'x'
+            # return render(request, 'profile.html',)
+
             if 'username' in request.session:
                 username=request.session['username']
                 return render(request,'profile.html',{'username':username})
             else:
 #          print 'x'
                 return render(request, 'login.html',)
->>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
+
 
 # add subject page
 def kemu(request):
@@ -317,7 +317,7 @@ def addroom(request):
                 return render(request, 'addroom.html')
 
 
-<<<<<<< HEAD
+
 #添加新闻页面
 def addnews(request):
     if request.method=='GET':
@@ -355,12 +355,11 @@ def accpedelnews(request):
 #      return HttpResponse('ssss')
 # db = conn['Teacher']
 # collecton = db.Teacher
-# print collecton.find_one({'studentid':'1'})
-=======
+
 
 
 # admin manage
 
 # admin login
 # def superuser(request):
->>>>>>> cf5a8f644c4baefdc206d8c7c149842aad9018a3
+
